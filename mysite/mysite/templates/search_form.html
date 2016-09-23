@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <title>Search</title>
+  </head>
+  <body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<ul class="breadcrumb">
+				<li>
+					 <a href="/">主页</a>
+				</li>
+			</ul>
+			<h3>
+				金海重工
+			</h3>
+			<div class="jumbotron">
+				<h1>
+					工资查询
+				</h1>
+				<p>
+					请输入姓名，密码（身份证后4位银行卡后4位），日期（年月，如201501），点击查询。
+				</p>
+			</div>
+			<form class="form-inline" role="form" action="/search/" method="get">
+				<div class="form-group">
+					 <label for="exampleInputxm">姓名</label><input class="form-control" name="q" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputmm">密码</label><input class="form-control" name="m" type="password" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputrq">日期</label><input class="form-control" name="sj" type="date" />
+				</div>				
+				<div class="checkbox">
+				</div> <button type="submit" class="btn btn-primary btn-large">查询</button><span style="color: red">{{ status }}</span>
+			</form>
+		</div>
+	</div>
+</div>
+  </body>
+  </html>

@@ -1,0 +1,73 @@
+CREATE TABLE gzzb1 SELECT * FROM gzzb3 WHERE 1=2
+http://dqk520.pythonanywhere.com/
+source /home/dqk520/mysite/gzzb4.sql
+SHOW TABLE STATUS FROM dqk520$mydb LIKE gzzb1;
+drop table gzzb3; 删除表
+alter table gzzb1 rename gzzb3;更改表名
+books = Gzzb4.objects.filter(gz4_5__exact='戴奇凯').filter(gz4_73__contains=201608).order_by("-gz4_73").values()
+
+
+
+同步数据库
+django1.7 下方法有改变 
+1，在添加了新的 app 之后，我们需要运行下面命令告诉 Django 你的模型做了改变，需要迁移数据库： python manage.py makemigrations books
+2，运行下面语句，你可以查看迁移的 sql 语句： python manage.py sqlmigrate books 0001 
+3，你可以运行下面命令，来检查数据库是否有问题： python manage.py check 
+4，运行下面的命令，来创建新添加的模型 python manage.py migrate
+
+win10 64位 python2.7 django1.9 亲测有用 
+第一步 python manage.py makemigrations books 
+第二步 python mange.py sqlmigrate books 0001 
+第三步 python manage.py migrate 评论简直太有用了
+
+数据库生成模型
+python manage.py inspectdb>models.py
+python manage.py runserver
+
+
+python manage.py shell
+
+from books.models import Mima
+Mima.objects.get(mimagh__exact="00028").mimagh
+
+
+Publisher.objects.get(name="WeizhongTu")
+m=Gzzb3.objects.all().gz1
+p=Mima.objects.all()
+
+from books.models import Gzzb3
+books = Gzzb3.objects.filter(gz3__icontains='30.14').values('gz1','gz2','gz3')
+books = Mima.objects.filter(mimaxm__exact='戴奇凯').mimamm
+
+
+from django.core import serializers
+from books.models import Gzzb3
+book2 = Gzzb4.objects.filter(gz4_5__exact='戴奇凯')
+book2 = Mima.objects.get(mimaxm__exact='戴奇凯').mimamm
+data = serializers.serialize("json",book2)
+print books.data()
+
+books = Gzzb4.objects.filter(gz4_5__exact='戴奇凯').filter(gz4_73__contains=201608).order_by("-gz4_73").values()
+
+添加id主键
+alter table mima add COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY first;
+
+
+删除列
+ALTER TABLE mima DROP id;
+
+
+books = Gzzb3.objects.filter(gz38__exact="戴奇凯").filter(gz1__contains="2015").order_by("-gz1").values()
+
+<script type="text/javascript">
+    function createTable(){
+        var data = {{ list_json }};
+        for(i=0;i<data.length;i++){
+            for(j=0;i<data[i].length;j++){
+                data[i][j];//blahblahblahblah...
+            }
+        }
+    }
+</script>
+
+

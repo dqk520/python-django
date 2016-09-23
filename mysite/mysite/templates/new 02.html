@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+function altRows(id){
+	if(document.getElementsByTagName){  
+		
+		var table = document.getElementById(id);  
+		var rows = table.getElementsByTagName("tr"); 
+		 
+		for(i = 0; i < rows.length; i++){          
+			if(i % 2 == 0){
+				rows[i].className = "evenrowcolor";
+			}else{
+				rows[i].className = "oddrowcolor";
+			}      
+		}
+	}
+}
+
+window.onload=function(){
+	altRows('alternatecolor');
+}
+</script>
+<style type="text/css">
+table.altrowstable {
+	font-family: verdana,arial,sans-serif;
+	font-size:12px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #a9c6c9;
+	border-collapse: collapse;
+}
+table.altrowstable th {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #a9c6c9;
+
+}
+table.altrowstable td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
+</style>
+    <title>Search</title>
+  </head>
+  <body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<ul class="breadcrumb">
+				<li>
+					 <a href="/">主页</a>
+				</li>
+			</ul>
+<p>你的查询为： <strong>{{ query }}</strong></p>
+{% if books %}
+    <p>查询到 {{ books|length }} 项{{ books|pluralize }}。</p>
+
+<div class="table-responsive">
+<table class="table table-hover"   id="result">
+    <!--          <table class="altrowstable" id="alternatecolor"> --> 
+<script type="text/javascript">
+var books= {{ books|safe }};
+var mc=['姓名','人数','岗位'];
+var zd=['gz4_5','gz4_6','gz4_7'];
+var xx=""
+for (k=0;k<mc.length;k++){
+xx= xx +"<tr>";
+xx= xx + ("<th>" + mc[k] + "</th>");
+for (i=0;i<books.length;i++){
+qr = books[i];
+kk = zd[k]
+xx=xx+("<td>" + qr[kk] + "</td>");
+};
+xx= xx+ "</tr>";
+};
+$('#result').append(xx)
+</script>
+</table> 
+</div>
+{% else %}
+    <p>未找到相关信息，请检测输入是否正确。</p>
+{% endif %}
+		</div>
+	</div>
+</div>
+  </body>
+  </html>
